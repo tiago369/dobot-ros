@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/tiago/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/tiago/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/tiago/tutorial_ws/src/learning_tf/include/**",
+        "/home/tiago/catkin_ws/src/python_bindings_tutorial/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
