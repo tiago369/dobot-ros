@@ -1,2 +1,2 @@
 dobot
--DCATKIN_DEVEL_PREFIX=/home/xenial_home/dobot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/xenial_home/dobot_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/tiago-projects/dobot-ros/dobot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/tiago-projects/dobot-ros/dobot_ws/install -G Unix Makefiles
