@@ -1,2 +1,5 @@
 /dobot_ws/build
 /dobot_ws/devel
+/.vscode
+/dobot_ws/.vscode
+/dobot_ws/.catkin_workspace
