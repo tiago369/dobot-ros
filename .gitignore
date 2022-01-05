@@ -2,3 +2,4 @@
 /dobot_ws/devel
 /.vscode
 /dobot_ws/.vscode
+/dobot_ws/src/CMakeLists.txt
