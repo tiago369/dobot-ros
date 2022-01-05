@@ -1,0 +1,8 @@
+prefix=/home/senai/tiago-projects/dobot-ros/dobot_noetic_ws/install
+
+Name: dobot_magician_config_pkg
+Description: Description of dobot_magician_config_pkg
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

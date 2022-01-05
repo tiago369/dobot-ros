@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/senai/tiago-projects/dobot-ros/dobot_noetic_ws/devel/setup.sh

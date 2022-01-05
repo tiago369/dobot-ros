@@ -1,0 +1,314 @@
+
+<robot name="dobot_magician">
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 0 - BASE_LINK__________________-->
+<!--- ________________________________________________________--> 
+
+ <link name="base_link">
+    
+    <inertial>
+      <mass value="4" />
+      <inertia ixx="0.0085988" ixy="5.4719E-20" ixz="6.3149E-19" iyy="0.014441"  iyz="-9.7318E-20"  izz="0.0085988" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0"  rpy="0 0 0" />
+      <geometry>
+        <box size="0.15 0.15 0.065"/>
+      </geometry>
+      <material name="Aluminum 6061-1">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0"  rpy="0 0 0" />
+      <geometry>
+        <box size="0.20 0.20 0.0"/>          
+      </geometry>
+    </collision>
+
+  </link>
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 1_____________________________-->
+<!--- ________________________________________________________--> 
+
+  <joint name="joint_1" type="revolute">
+
+    <parent link="base_link"/>
+    <child link="link_1"/>
+      <origin xyz="0 0 0.1"/>
+      <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+        <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 1______________________________-->
+<!--- ________________________________________________________--> 
+
+  <link name="link_1">
+
+    <visual>
+      <geometry>
+	<box size="0.0495 0.06 0.104"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+      <material name="Aluminum 6061-2">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<box size="0.06 0.08 0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+    </collision>
+
+    <inertial>
+	<mass value="0.096"/>
+	<inertia  ixx="0.00011245" ixy="-6.1285E-12"  ixz="-2.3175E-12" iyy="3.1935E-05" iyz="7.882E-06" izz="0.00013863"/>
+    </inertial>
+
+  </link>
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 2_____________________________-->
+<!--- ________________________________________________________--> 
+
+  <joint name="joint_2" type="revolute">
+
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0 0 0.01"/>
+    <axis xyz="1 0 0" />
+    <limit effort="300" velocity="0.1" lower="1.22" upper="2.52"/>
+    <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 2______________________________-->
+<!--- ________________________________________________________--> 
+
+  <link name="link_2">
+
+    <visual>
+      <geometry>
+	<box size="0.0395 0.057 0.153"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.06"/>
+      <material name="Aluminum 6061_t">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<box size="0.04 0.04 0.4"/>
+      </geometry>
+     <origin rpy="0 0 0" xyz="0 0 -0.06"/>
+    </collision>
+
+    <inertial>
+	<mass value="0.057"/>
+	<inertia ixx="0.00021362" ixy="-6.7763E-21" ixz="-1.2347E-05" iyy="0.00023861" iyz="1.6687E-19" izz="2.5031E-05" />
+    </inertial>
+
+  </link>
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 3_____________________________-->
+<!--- ________________________________________________________--> 
+ 
+<joint name="joint_3" type="revolute">
+
+    <parent link="link_2"/>
+    <child link="link_3"/>
+      <origin xyz="0 0 -0.153"/>
+      <axis xyz="1 0 0" />
+        <limit effort="300" velocity="0.1" lower="-0.99" upper="-1.89"/>
+        <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 3______________________________-->
+<!--- ________________________________________________________--> 
+
+  <link name="link_3">
+
+    <visual>
+      <geometry>
+	<box size="0.0355 0.057 0.153"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.06"/>
+      <material name="Aluminum">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<box size="0.04 0.04 0.4"/>
+      </geometry>
+     <origin rpy="0 0 0" xyz="0 0 -0.06"/>
+    </collision>
+
+    <inertial>
+	<mass value="0.055"/>
+	<inertia ixx="2.0397E-05" ixy="-2.481E-05" ixz="9.5291E-21" iyy="0.0002562" iyz="-2.3717E-20" izz="0.00027655"/>
+    </inertial>
+
+  </link>
+
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 4_____________________________-->
+<!--- ________________________________________________________--> 
+
+  <joint name="joint_4" type="revolute">
+
+    <parent link="link_3"/>
+    <child link="link_4"/>
+      <origin xyz="0 0 -0.153"/>
+      <axis xyz="1 0 0" />
+        <limit effort="300" velocity="0.1" lower="-0.50" upper="-1.30"/>
+        <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 4______________________________-->
+<!--- ________________________________________________________--> 
+
+  <link name="link_4">
+
+    <visual>
+      <geometry>
+	<box size="0.02 0.04 0.0462"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <material name="red">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<box size="0.04 0.06 0.06"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+    </collision>
+
+    <inertial>
+	<mass value="0.022"/>
+	<inertia  ixx="4.329E-06" ixy="-1.0614E-06" ixz="-4.6587E-21" iyy="4.7894E-06" iyz="-3.5999E-21" izz="7.1397E-06"/>
+    </inertial>
+
+  </link>
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 5_____________________________-->
+<!--- ________________________________________________________--> 
+
+  <joint name="joint_5" type="revolute">
+
+    <parent link="link_4"/>
+    <child link="link_5"/>
+      <origin xyz="0 0 -0.07"/>
+      <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-2.89" upper="2.89"/>
+        <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 5______________________________-->
+<!--- ________________________________________________________--> 
+
+  <link name="link_5">
+
+    <visual>
+      <geometry>
+	<box size="0.04 0.09 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.06 0.02"/>
+      <material name="blue">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<box size="0.06 0.1 0.4"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.06 0.02"/>
+    </collision>
+
+    <inertial>
+	<mass value="1"/>
+	<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+
+<!--- ________________________________________________________-->
+<!--- ____________________JOINT 6_____________________________-->
+<!--- ________________________________________________________--> 
+
+  <joint name="joint_6" type="revolute">
+
+    <parent link="link_5"/>
+    <child link="link_6"/>
+      <origin xyz="0 0.09 0.01"/>
+      <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.89" upper="3.89"/>
+        <dynamics damping="50" friction="1"/>
+
+  </joint>
+
+
+<!--- ________________________________________________________-->
+<!--- ____________________LINK 6______________________________-->
+<!--- ________________________________________________________--> 
+  
+  <link name="link_6">
+
+    <visual>
+      <geometry>
+	<cylinder length="0.04" radius="0.008"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <material name="black">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	<cylinder length="0.06" radius="0.01"/>
+      </geometry>
+     <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+    </collision>
+
+    <inertial>
+	<mass value="1"/>
+	<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+
+<!--- ___________________________________DESCRIPTION END________________________________________________________ -->
+
+<!--- ___________________________________DESCRIPTION DOBOT MAGICIAN_____________________________________________ -->
+<!--- _DANIEL_TOBON_COLLAZOS_2126550_____________________________________________________________________________-->
+<!--- _RUBEN_DARIO_FIERRO_______________________________________________________________________________________ -->
+
+</robot>
+
+
