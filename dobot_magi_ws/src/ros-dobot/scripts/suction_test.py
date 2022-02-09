@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 from numpy import uint8
 import rospy
 from geometry_msgs.msg import Pose
