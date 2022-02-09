@@ -105,8 +105,8 @@ V4L2_DEVICES=" "
 
 for i in {0..9}
 do
-	if [ -a "/dev/video$i" ]; then
-		V4L2_DEVICES="$V4L2_DEVICES --device /dev/video$i "
+	if [ -a "/dev/ttyUSB$i" ]; then
+		V4L2_DEVICES="$V4L2_DEVICES --device /dev/ttyUSB$i "
 	fi
 done
 
