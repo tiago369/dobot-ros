@@ -1,8 +1,8 @@
 # dobot_ws ignores
-/dobot_magi_ws/build
-/dobot_magi_ws/devel
+# /dobot_magi_ws/build
+# /dobot_magi_ws/devel
 # /dobot_ws/.catkin_workspace
-/dobot_magi_ws/src/CMakeLists.txt
+# /dobot_magi_ws/src/CMakeLists.txt
 
 /.vscode
 
