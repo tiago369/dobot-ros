@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER_IMAGE="ros:kinetic"
+CONTAINER_IMAGE="tiago369/ubuntu-kinect:kine"
 
 USER_VOLUME=""
 USER_COMMAND=""
