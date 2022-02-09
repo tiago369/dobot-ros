@@ -224,6 +224,13 @@ add_executable(DobotClient_topic src/DobotClient_topic.cpp)
 target_link_libraries(DobotClient_topic ${catkin_LIBRARIES})
 add_dependencies(DobotClient_topic dobot_gencpp)
 
+catkin_install_python(PROGRAMS scripts/talker.py 
+  scripts/pick_and_place.py 
+  scripts/position_control.py
+  scripts/suction_test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/dobot.cpp
