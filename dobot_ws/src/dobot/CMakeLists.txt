@@ -121,17 +121,11 @@ add_service_files(
   GetIODI.srv
   GetIOADC.srv
   SetEMotor.srv
-  GetInfraredSensor.srv
-  SetInfraredSensor.srv
-  
-  SetColorSensor.srv
-  GetColorSensor.srv
 
   SetQueuedCmdStartExec.srv
   SetQueuedCmdStopExec.srv
   SetQueuedCmdForceStopExec.srv
   SetQueuedCmdClear.srv
-  
 )
 
 ## Generate actions in the 'action' folder
@@ -225,6 +219,17 @@ add_dependencies(DobotClient_JOG dobot_gencpp)
 add_executable(DobotClient_PTP src/DobotClient_PTP.cpp)
 target_link_libraries(DobotClient_PTP ${catkin_LIBRARIES})
 add_dependencies(DobotClient_PTP dobot_gencpp)
+
+add_executable(DobotClient_topic src/DobotClient_topic.cpp)
+target_link_libraries(DobotClient_topic ${catkin_LIBRARIES})
+add_dependencies(DobotClient_topic dobot_gencpp)
+
+catkin_install_python(PROGRAMS scripts/talker.py 
+  scripts/pick_and_place.py 
+  scripts/position_control.py
+  scripts/suction_test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
