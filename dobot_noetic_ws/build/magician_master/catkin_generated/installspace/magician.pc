@@ -1,8 +1,0 @@
-prefix=/home/senai/tiago-projects/dobot-ros/dobot_noetic_ws/install
-
-Name: magician
-Description: Description of magician
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

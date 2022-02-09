@@ -1,2 +1,0 @@
-dobot_magician_config_pkg:dobot_magician_pkg:magician
--DCATKIN_DEVEL_PREFIX=/home/senai/tiago-projects/dobot-ros/dobot_noetic_ws/devel -DCMAKE_INSTALL_PREFIX=/home/senai/tiago-projects/dobot-ros/dobot_noetic_ws/install -G Unix Makefiles
