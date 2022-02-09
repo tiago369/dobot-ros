@@ -1,7 +1,10 @@
+# dobot_ws ignores
 /dobot_ws/build
 /dobot_ws/devel
+dobot_ws/.catkin_workspace
+/dobot_ws/src/CMakeLists.txt
+
 /.vscode
 /dobot_ws/.vscode
-/dobot_ws/src/CMakeLists.txt
 /dobot_noetic_ws/.vscode
 /dobot_noetic_ws/src/magician/.vscode
