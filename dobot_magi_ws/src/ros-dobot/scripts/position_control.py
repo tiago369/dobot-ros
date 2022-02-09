@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 from turtle import pu
 import rospy
 from geometry_msgs.msg import Pose
@@ -25,4 +25,3 @@ if __name__ == "__main__":
         publisher.publish(msg)
 
         freq.sleep()
-        break
