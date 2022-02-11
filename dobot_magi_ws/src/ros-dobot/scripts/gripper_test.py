@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 from numpy import uint8
 import rospy
-from dobot.srv import SetEndEffectorSuctionCup
+from dobot.srv import SetEndEffectorGripper
 
 if __name__ == "__main__":
     rospy.init_node('suction_test', anonymous=True)
-    suction_srv = rospy.ServiceProxy('DobotServer/SetEndEffectorSuctionCup', SetEndEffectorSuctionCup)
+    suction_srv = rospy.ServiceProxy('DobotServer/SetEndEffectorGripper', SetEndEffectorGripper)
 
     x = uint8(input('Put value:  '))
 

@@ -2,13 +2,13 @@
 import rospy
 
 from dobot.srv import GetPose
+
 if __name__ == '__main__':
     print('1')
     # rospy.wait_for_service('print_pose')
     get_pose = rospy.ServiceProxy('DobotServer/GetPose', GetPose)
     print('2')
 
-    var = []
 
     try:
         print('a')
@@ -17,7 +17,8 @@ if __name__ == '__main__':
     except rospy.ServiceException as exc:
         print("Service did not process request: " + str(exc))
 
-    print(var)
+    var = get_pose()
+    print(var.x)
 
     # while not rospy.is_shutdown():
     #     [rr, x, y, z, r, j] = get_pose()
