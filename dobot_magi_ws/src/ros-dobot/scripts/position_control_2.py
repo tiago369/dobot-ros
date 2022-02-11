@@ -23,19 +23,25 @@ def position():
     freq = rospy.Rate(0.5)
     dist = 1
 
-    k = 10
+    # k = 10
 
     while dist >= 0.1:
         print('a')
         msg = Pose()
         pose = get_pose()
         
-        msg.position.x = k * distancia(pose.x, x)
-        msg.position.y = k * distancia(pose.y, y)
-        msg.position.z = k * distancia(pose.z, z)
+        # msg.position.x = k * distancia(pose.x, x)
+        # msg.position.y = k * distancia(pose.y, y)
+        # msg.position.z = k * distancia(pose.z, z)
+
+        msg.position.x = x
+        msg.position.y = y
+        msg.position.z = z
+
         publisher.publish(msg)
 
-        dist = (distancia(pose.x, x) + distancia(pose.z, z) + distancia(pose.y, y)) / 3
+        # dist = (distancia(pose.x, x) + distancia(pose.z, z) + distancia(pose.y, y)) / 3
+        dist = (pose.x + pose.y + pose.z) / 3
 
         freq.sleep()
 

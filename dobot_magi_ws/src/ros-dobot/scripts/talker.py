@@ -11,7 +11,7 @@ def talker():
     rate = rospy.Rate(0.5) # 10hz
 
     t = 0
-    a = 1
+    a = 5
     while t < 25:
         msg = Pose()
 
