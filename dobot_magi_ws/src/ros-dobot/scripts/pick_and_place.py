@@ -23,7 +23,7 @@ if __name__ == "__main__":
     ini_z = pose.z
     
     print('a')
-    Valores arbitrarios para delimitar a area de atuação do robo
+    # Valores arbitrarios para delimitar a area de atuação do robo
     while True:
         print('The actual pose is')
         print('X: ')
@@ -39,11 +39,11 @@ if __name__ == "__main__":
         y = int(input("Y axis: "))
         z = int(input("Z axis: "))
         if 0 <= x > 200:
-            print('X value is not acceptble')
+            print('X value is not acceptable')
         elif -100 < y > 100:
-            print('Y value is not acceptble')
+            print('Y value is not acceptable')
         elif -100 < z > 100:
-            print('Z value is not acceptble')
+            print('Z value is not acceptable')
         else:
             break
 
@@ -54,23 +54,25 @@ if __name__ == "__main__":
         resp = suction_srv(1, 0, False)
 
         print('Move ate o ponto para pegar o objeto')
-        dist = 1
-        while dist >= 1 or not rospy.is_shutdown():
+        # dist = 1
+        while (pose.x != x and pose.y != y and pose.z != z) or not rospy.is_shutdown():
             msg.position.x = x
             msg.position.y = y
             msg.position.z = z
             publisher.publish(msg)
-            dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
+            # dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
+
+            
 
         print('Suga')
         resp = suction_srv(1, 254, False)
 
-        dist = 1
+        # dist = 1
         print('Move ate o ponto inicial')
-        while dist >= 1 or not rospy.is_shutdown():
-            msg.position.x = 2
-            msg.position.y = 0
-            msg.position.z = 0
+        while (pose.x != ini_x and pose.y != ini_y and pose.z != ini_z) or not rospy.is_shutdown():
+            msg.position.x = ini_x
+            msg.position.y = ini_y
+            msg.position.z = ini_z
             publisher.publish(msg)
             dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
 
