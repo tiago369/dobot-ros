@@ -25,7 +25,7 @@ def position():
 
     # k = 10
 
-    while dist >= 0.1:
+    while not rospy.is_shutdown():
         print('a')
         msg = Pose()
         pose = get_pose()
@@ -33,6 +33,14 @@ def position():
         # msg.position.x = k * distancia(pose.x, x)
         # msg.position.y = k * distancia(pose.y, y)
         # msg.position.z = k * distancia(pose.z, z)
+        # dist = 1
+        # while (pose.x != x and pose.y != y and pose.z != z) or not rospy.is_shutdown():
+        #     msg.position.x = x
+        #     msg.position.y = y
+        #     msg.position.z = z
+        #     publisher.publish(msg)
+        #     dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
+        
 
         msg.position.x = x
         msg.position.y = y
@@ -41,7 +49,7 @@ def position():
         publisher.publish(msg)
 
         # dist = (distancia(pose.x, x) + distancia(pose.z, z) + distancia(pose.y, y)) / 3
-        dist = (pose.x + pose.y + pose.z) / 3
+        # dist = (pose.x + pose.y + pose.z) / 3
 
         freq.sleep()
 

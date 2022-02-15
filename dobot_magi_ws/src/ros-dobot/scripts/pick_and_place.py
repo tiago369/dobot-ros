@@ -54,13 +54,13 @@ if __name__ == "__main__":
         resp = suction_srv(1, 0, False)
 
         print('Move ate o ponto para pegar o objeto')
-        # dist = 1
+        dist = 1
         while (pose.x != x and pose.y != y and pose.z != z) or not rospy.is_shutdown():
             msg.position.x = x
             msg.position.y = y
             msg.position.z = z
             publisher.publish(msg)
-            # dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
+            dist = ((x - pose.x) + (y - pose.y) + (z - pose.z))/3
 
             
 
